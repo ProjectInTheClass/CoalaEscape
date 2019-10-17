@@ -25,7 +25,7 @@ room1.locateObject(room.keypad,930,250) // 위치 변경
 room1.keypad.onClick = function(){ printMessage("오빠~ 허튼 생각하지말고 얌전히 집 잘보고 있어....^^")
                                   showKeypad("number","",function(){
                                     room1.door.unlock() // door의 잠금을 연다
-                                    printMessage("엇! 문이 열려버렸닼ㅋㅋㅋ엌ㅋㅋ")
+                                    printMessage("엇! 문이 열려버렸닼ㅋㅋㅋ엌ㅋㅋ 바로 겜하러..ㅎㅎ")
                                   })
                                  }
 
