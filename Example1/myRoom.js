@@ -7,31 +7,31 @@ playSound("브롤스타즈 BGM - 메인화면.mp3")
 
 room1.door1 = room.createObject("door","문-오른쪽-닫힘.png") // 문 생성
 room1.door1.setWidth(136) // 크기 조절
-room1.locateObject(room.door,1049,300) // 문 배치 
-room1.door.lock() // door 상태를 locked로 변경
+room1.locateObject(room1.door1,1049,300) // 문 배치 
+room1.door1.lock() // door 상태를 locked로 변경
 
 room2.door1 = room2.createObject("door1","문-왼쪽-닫힘.png")
 
 room1.door1.onClick = function(){
-  if(room.door.isClosed()){ room.door.open()}
-  else if (room.door.isOpened()){ game.move(room2)}
-  else if (room.door.isLocked()){ printMessage("앙 오늘 브롤 경쟁전 마지막 날이란 말양ㅠㅠㅠ")}
+  if(room1.door1.isClosed()){ room.door.open()}
+  else if (room1.door1.isOpened()){ game.move(room2)}
+  else if (room1.door1.isLocked()){ printMessage("앙 오늘 브롤 경쟁전 마지막 날이란 말양ㅠㅠㅠ")}
 }
 
 //키패드 만들기 
-room1.keypad = room.createObject("keypad","숫자키-우.png") // 오브젝트 생성
+room1.keypad = room1.createObject("keypad","숫자키-우.png") // 오브젝트 생성
 room1.keypad.setWidth(50) // 크기 조절 
-room1.locateObject(room.keypad,930,250) // 위치 변경 
+room1.locateObject(room1.keypad,930,250) // 위치 변경 
 room1.keypad.onClick = function(){ printMessage("오빠~ 허튼 생각하지말고 얌전히 집 잘보고 있어....^^")
                                   showKeypad("number","6672",function(){
-                                    room1.door.unlock() // door의 잠금을 연다
+                                    room1.door1.unlock() // door의 잠금을 연다
                                     printMessage("엇! 문이 열려버렸닼ㅋㅋㅋ엌ㅋㅋ 바로 겜하러..ㅎㅎ")
                                   })
                                  }
 //시계 만들기 
 room1.clock1 = room1.createObject("clock1","시계.png")
 room1.clock1.setWidth(100)
-room1.locateObject(room.clock1,100,110)
+room1.locateObject(room1.clock1,100,110)
 room1.clock1.onClick=function(){printMessage("마눌님 전번 뒷자리는...!")}
 
 //TV 만들기 
@@ -125,7 +125,7 @@ room2.mac = room.createObject("mac", "파란맥-우.png") // 맥 생성
 room2.mac.setWidth(150)
 room2.locateObject(room.mac, 955, 230)
 
-
+//
 
 
 
@@ -137,6 +137,7 @@ room2.keypad2.onClick = function() {
 	printMessage("밖에 맘대로 나가지도 못하고 이건 너무한거 아니냐고ㅠ.ㅠ")
 	showKeypad("number", "" , function(){
 		room2.mac2.show() // mac2를 보이게 만든다. 
+		
 		printMessage("뭐야이거 초현실주의야 뭐야-.-.")
 	 })
 }
@@ -147,17 +148,21 @@ room2.locateObject(room2.keypad2, 200, 400) // 위치 변경
 
 room2.keypad2.onClick = function() {
 	printMessage("비밀번호를 풀어보세요!! ")
-	showKeypad("alphabet", "BINGO" , function(){
+	showKeypad("number", "3915" , function(){
 		room2.door2.unlock() // door의 잠금을 연다
 		printMessage("잠금장치가 열리는 소리가 들렸다.")
 	 })
 }
 
+
 room2.mac2.onClick = function(){
   playYoutube("https://www.youtube.com/watch?v=uCqwcvh957A")}
   
 
-
+//비밀번호를 알려주는 종이쪼가리 만들기 
+room2.post.onClick = function(){showImageViewer("paper.png","께미새 우리 매형에게.. 형 비밀번호는 (콜트의 풀피체력)-(콜트 킬수)입니다.. ")}
+room2.post.setWidth(50)
+room2.locateObject(room2.post,150,30) // 위치 변경
 
 
 
