@@ -75,11 +75,11 @@ room1.book.onClick = function() {
 
 playSound("브롤스타즈 BGM - 전투 3.mp3")
 
-room2.door = room2.createObject("door","문-오른쪽-열림.png") //문 생성
-room2.door.setWidth(136)
-room2.locateObject(room2.door,1049,305)
-room2.door.open()
-room2.door.onClick = function(){game.move(room1)}
+room2.door1 = room2.createObject("door1","문-오른쪽-열림.png") //문 생성
+room2.door1.setWidth(136)
+room2.locateObject(room2.door1,1049,305)
+room2.door1.open()
+room2.door1.onClick = function(){game.move(room1)}
 
 room2.door2 = room2.createObject("door2", "문3-좌-닫힘.png")
 room2.door2.setWidth(136)
@@ -104,6 +104,10 @@ room2.locateObject(room.table1, 350, 400)
 room2.mac1 = room.createObject("mac1", "파란맥-우.png") // 맥 생성
 room2.mac1.setWidth(150)
 room2.locateObject(room2.mac1, 355, 230)
+
+room2.mac1.onClick=function(){
+	printMessage("레온으로 캐리를 해보자! 수리검으로 참교육해주지 쿠쿡...!")
+	playYoutube("https://youtu.be/6V35bQTvfdo")}
 
 
 //mac2 만들기
@@ -135,7 +139,8 @@ room2.locateObject(room2.keypad1, 200, 300) // 위치 변경
 
 room2.keypad2.onClick = function() {
 	printMessage("밖에 맘대로 나가지도 못하고 이건 너무한거 아니냐고ㅠ.ㅠ")
-	showKeypad("number", "" , function(){
+	printMessage("레온의 영상을 보고 레온의 머리 위에 있는 보석 개수들의 전체 곱을 쓰세요.") 
+	showKeypad("number", "0088" , function(){
 		room2.mac2.show() // mac2를 보이게 만든다. 
 		
 		printMessage("뭐야이거 초현실주의야 뭐야-.-.")
@@ -160,9 +165,22 @@ room2.mac2.onClick = function(){
   
 
 //비밀번호를 알려주는 종이쪼가리 만들기 
-room2.post.onClick = function(){showImageViewer("paper.png","께미새 우리 매형에게.. 형 비밀번호는 (콜트의 풀피체력)-(콜트 킬수)입니다.. ")}
+room2.post.onClick = function(){
+	printMessage("아니 이것은 처남이 남긴 메세지?!")
+	showImageViewer("paper.png","매형에게.txt")}
 room2.post.setWidth(50)
 room2.locateObject(room2.post,150,30) // 위치 변경
+
+//
+//
+// room3 만들기 
+//
+//
+playSound("브롤스타즈 BGM - 전투 3.mp3")
+
+
+
+
 
 
 
