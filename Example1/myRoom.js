@@ -1,6 +1,6 @@
 room1 = game.createRoom("room", "배경-6.png") // 방 생성
 room2 = game.createRoom("room2", "배경-5.png") // 두번째 방 생성
-room3 = game.createRoom("room3", "배경-4.png") // 세번째 방 생성
+room3 = game.createRoom("room3", "거실1.png") // 세번째 방 생성
                        
 //room1 
 playSound("브롤스타즈 BGM - 메인화면.mp3")
@@ -176,7 +176,17 @@ room2.locateObject(room2.post,150,30) // 위치 변경
 // room3 만들기 
 //
 //
-playSound("브롤스타즈 BGM - 전투 3.mp3")
+playSound("브롤스타즈 BGM - 승리.mp3")
+printMessage("아! 내가 오랜만에 주말에 게임 오지게 많이 했다!ㅎㅎ 어 근데 딱봐도 이상해보이는 저건 뭐지")
+
+room3.box = room3.createObject("box","상자4-2-닫힘.png")
+room3.locateObject(room3.box,200,200)
+room3.box.onClick = function(){
+	showImageViewer("마지막.jpg")
+	printMessage("방금 니 처남 처단하고 오는 길이다 닌 뒤졌다^^")
+	game.clear()}
+
+	
 
 
 
