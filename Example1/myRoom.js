@@ -1,7 +1,9 @@
 room1 = game.createRoom("room", "배경-1.png") // 방 생성
-room2 = game.createRoom("room", "배경-5.png") // 두번째 방 생성
-room3 = game.createRoom("room", "배경-4.png") // 세번째 방 생성
+room2 = game.createRoom("room2", "배경-5.png") // 두번째 방 생성
+room3 = game.createRoom("room3", "배경-4.png") // 세번째 방 생성
                        
+//room1 
+playSound("브롤스타즈 BGM - 메인화면.mp3")
 
 room1.door1 = room.createObject("door","문-오른쪽-닫힘.png") // 문 생성
 room1.door1.setWidth(136) // 크기 조절
@@ -16,7 +18,6 @@ room1.door1.onClick = function(){
   else if (room.door.isLocked()){ printMessage("문이 잠겨있네요. 어떻게 해야 할까요.")}
 }
 
-playSound("브롤스타즈 BGM - 메인화면.mp3")
 
 room1.keypad = room.createObject("keypad","숫자키-우.png") // 오브젝트 생성
 room1.keypad.setWidth(50) // 크기 조절 
@@ -28,11 +29,12 @@ room1.keypad.onClick = function(){ printMessage("주어진 단서를 모아 비�
                                   })
                                  }
 
-room1.clock1 = room.createObject("clock","시계.png")
+room1.clock1 = room.createObject("clock1","시계.png")
 room1.clock1.setWidth(100)
 room1.locateObject(room.clock1,100,110)
 room1.clock1.onClick=function(){printfMessage("음...아무런 단서도 찾아볼 수 없군.")}
 
+room1.post1.onClick = function(){showImageViewer("
 
 
 
