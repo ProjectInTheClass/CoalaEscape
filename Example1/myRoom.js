@@ -1,6 +1,6 @@
-room1 = game.createRoom("room", "거실1.png") // 방 생성
+room1 = game.createRoom("room", "배경-6.png") // 방 생성
 room2 = game.createRoom("room2", "플스방2.png") // 두번째 방 생성
-room3 = game.createRoom("room3", "배경-4.png") // 세번째 방 생성
+room3 = game.createRoom("room3", "거실1.png") // 세번째 방 생성
                        
 //room1 
 playSound("브롤스타즈 BGM - 메인화면.mp3")
@@ -29,12 +29,15 @@ room1.keypad.onClick = function(){ printMessage("오빠~ 허튼 생각하지말�
                                   })
                                  }
 
-room1.clock1 = room.createObject("clock1","시계.png")
+room1.clock1 = room1.createObject("clock1","시계.png")
 room1.clock1.setWidth(100)
 room1.locateObject(room.clock1,100,110)
-room1.clock1.onClick=function(){printfMessage("음...아무런 단서도 찾아볼 수 없군.")}
+room1.clock1.onClick=function(){printMessage("음...아무런 단서도 찾아볼 수 없군.")}
 
-room1.post1.onClick = function(){showImageViewer("
+room1.tv1=room1.createObject("TV","TV2-1.png") //오브젝트 생성 
+room1.tv1.set Width(100) // 크기 조절 
+room1.locateObject(room1.tv1,500,240) // 위치 설정 
+room1.tv1.onClick=function(){showImageViewer("
 
 
 
