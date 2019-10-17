@@ -1,16 +1,14 @@
-room1 = game.createRoom("room", "배경-6.png") // 방 생성
+room1 = game.createRoom("room1", "배경-6.png") // 방 생성
 room2 = game.createRoom("room2", "배경-5.png") // 두번째 방 생성
 room3 = game.createRoom("room3", "거실1.png") // 세번째 방 생성
                        
 //room1 
 playSound("브롤스타즈 BGM - 메인화면.mp3")
 
-room1.door1 = room.createObject("door","문-오른쪽-닫힘.png") // 문 생성
+room1.door1 = room1.createObject("door1","문-오른쪽-닫힘.png") // 문 생성
 room1.door1.setWidth(136) // 크기 조절
 room1.locateObject(room1.door1,1049,300) // 문 배치 
 room1.door1.lock() // door 상태를 locked로 변경
-
-room2.door1 = room2.createObject("door1","문-왼쪽-닫힘.png")
 
 room1.door1.onClick = function(){
   if(room1.door1.isClosed()){ room.door.open()}
