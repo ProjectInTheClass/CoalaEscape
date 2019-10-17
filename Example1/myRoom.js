@@ -1,5 +1,5 @@
-room1 = game.createRoom("room", "배경-1.png") // 방 생성
-room2 = game.createRoom("room2", "배경-5.png") // 두번째 방 생성
+room1 = game.createRoom("room", "거실1.png") // 방 생성
+room2 = game.createRoom("room2", "플스방2.png") // 두번째 방 생성
 room3 = game.createRoom("room3", "배경-4.png") // 세번째 방 생성
                        
 //room1 
@@ -15,17 +15,17 @@ room2.door1 = room2.createObject("door1","문-왼쪽-닫힘.png")
 room1.door1.onClick = function(){
   if(room.door.isClosed()){ room.door.open()}
   else if (room.door.isOpened()){ game.move(room2)}
-  else if (room.door.isLocked()){ printMessage("문이 잠겨있네요. 어떻게 해야 할까요.")}
+  else if (room.door.isLocked()){ printMessage("앙 오늘 브롤 경쟁전 마지막 날이란 말양ㅠㅠㅠ")}
 }
 
 
 room1.keypad = room.createObject("keypad","숫자키-우.png") // 오브젝트 생성
 room1.keypad.setWidth(50) // 크기 조절 
 room1.locateObject(room.keypad,930,250) // 위치 변경 
-room1.keypad.onClick = function(){ printMessage("주어진 단서를 모아 비밀번호를 풀어보세요!")
+room1.keypad.onClick = function(){ printMessage("오빠~ 허튼 생각하지말고 얌전히 집 잘보고 있어....^^")
                                   showKeypad("number","",function(){
                                     room1.door.unlock() // door의 잠금을 연다
-                                    printMessage("엇! 비밀번호가 열렸습니다!")
+                                    printMessage("엇! 문이 열려버렸닼ㅋㅋㅋ엌ㅋㅋ")
                                   })
                                  }
 
@@ -44,4 +44,4 @@ room1.post1.onClick = function(){showImageViewer("
 
 
 game.start(room) // 게임시작
-printMessage("브롤스타즈 방탈출에 오신 것을 환영합니다! Let's~ Brawl!!") // 환영 메시지 출력
+printMessage("평화로운 주말....마눌님께서 외출한 사이 몰래 게임을 하고싶다ㅠㅠ") // 환영 메시지 출력
