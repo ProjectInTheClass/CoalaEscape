@@ -34,7 +34,7 @@ room1.clock1.onClick=function(){printMessage("마눌님 전번 뒷자리는...!"
 
 //TV 만들기 
 room1.tv1=room1.createObject("TV","TV2-1.png") //오브젝트 생성 
-room1.tv1.set Width(100) // 크기 조절 
+room1.tv1.setWidth(100) // 크기 조절 
 room1.locateObject(room1.tv1,500,240) // 위치 설정 
 room1.tv1.onClick=function(){showImageViewer("메인화면레온.png","")} //이미지 생성
 
