@@ -37,11 +37,11 @@ printMessage("엇! 문이 열려버렸닼ㅋㅋㅋ엌ㅋㅋ 바로 겜하러..�
 room.shelf = room.createObject("shelf", "선반-좌.png")
 room.shelf.setWidth(460)
 room.locateObject(room.shelf, 250, 150)
-room.book = room.createObject("book", "책3-1.png")
+room.book = room.createObject("book","책3-1.png")
 room.book.setWidth(80)
 room.locateObject(room.book, 100, 140)
 room.book.onClick = function() {
-	showImageViewer("종이.png", "책.txt"); // 이미지 출력
+	showImageViewer("종이.png","hello.txt"); // 이미지 출력
 }
 room.clock = room.createObject("clock","시계.png")
 room.clock.setWidth(100)
@@ -57,7 +57,7 @@ room.table = room.createObject("table", "테이블-우.png") // 테이블 생성
 room.table.setWidth(300)
 room.locateObject(room.table, 550, 400)
 
-room.cabinet = room.createObject("cabinet", "캐비닛-왼쪽-닫힘.png")
+room.cabinet = room.createObject("cabinet","캐비닛-왼쪽-닫힘.png")
 room.cabinet.setWidth(200)
 room.locateObject(room.cabinet, 110, 300)
 room.cabinet.move = true // 플래그 변수
@@ -102,7 +102,7 @@ room2.door2.onClick = function() { // door2를 클릭했을 때
 	}
 }
 //mac1세트 만들기
-room2.table1 = room2.createObject("table1", "테이블-우.png") // 테이블 생성
+room2.table1 = room2.createObject("table1","테이블-우.png") // 테이블 생성
 room2.table1.setWidth(350)
 room2.locateObject(room2.table1, 350, 400)
 
@@ -112,13 +112,13 @@ room2.locateObject(room2.mac1, 355, 230)
 
 room2.mac1.onClick=function(){
 	printMessage("레온으로 캐리를 해보자! 수리검으로 참교육해주지 쿠쿡...!")
-	game.showVideoPlayer('https://youtu.be/6V35bQTvfdo')}
+	game.showVideoPlayer('https://youtube/6V35bQTvfdo')}
 
 //mac2 만들기
-room2.table2 = room2.createObject("table2", "테이블-우.png") // 테이블 생성
+room2.table2 = room2.createObject("table2","테이블-우.png") // 테이블 생성
 room2.table2.setWidth(350)
 room2.locateObject(room2.table2, 650, 400)
-room2.mac2 = room2.createObject("mac2", "파란맥-우.png") // 맥 생성
+room2.mac2 = room2.createObject("mac2","파란맥-우.png") // 맥 생성
 room2.mac2.setWidth(150)
 room2.locateObject(room2.mac2, 655, 230)
 room2.mac2.hide()
@@ -158,7 +158,7 @@ room2.keypad2.onClick = function() {
 }
 
 room2.mac2.onClick = function(){
- game.showVideoPlayer('https://youtu.be/uCqwcvh957A')}
+ game.showVideoPlayer('https://youtube/uCqwcvh957A')}
 
 
 //비밀번호를 알려주는 종이쪼가리 만들기 
