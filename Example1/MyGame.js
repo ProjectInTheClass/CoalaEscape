@@ -11,7 +11,7 @@ room1.locateObject(room1.door1,1049,300) // 문 배치
 room1.door1.lock() // door 상태를 locked로 변경
 
 room1.door1.onClick = function(){
-  if(room1.door1.isClosed()){ room.door.open()}
+  if(room1.door1.isClosed()){ room1.door1.open()}
   else if (room1.door1.isOpened()){ game.move(room2)}
   else if (room1.door1.isLocked()){ printMessage("앙 오늘 브롤 경쟁전 마지막 날이란 말양ㅠㅠㅠ")}
 }
@@ -34,9 +34,9 @@ room1.clock1.onClick=function(){printMessage("마눌님 전번 뒷자리는...!"
 
 //TV 만들기 
 room1.tv1=room1.createObject("TV","TV2-1.png") //오브젝트 생성 
-room1.tv1.set Width(100) // 크기 조절 
+room1.tv1.setWidth(100) // 크기 조절 
 room1.locateObject(room1.tv1,500,240) // 위치 설정 
-room1.tv1.onClick=function(){showImageViewer("메인화면레온.png","")} //이미지 생성
+room1.tv1.onClick=function(){showImageViewer("메인화면레온.png","...")} //이미지 생성
 
 // 
 room1.cabinet = room1.createObject("cabinet","캐비닛-왼쪽-닫힘.png")
@@ -97,9 +97,9 @@ room2.door2.onClick = function() { // door2를 클릭했을 때
 //mac1세트 만들기
 room2.table1 = room2.createObject("table1", "테이블-우.png") // 테이블 생성
 room2.table1.setWidth(350)
-room2.locateObject(room.table1, 350, 400)
+room2.locateObject(room2.table1, 350, 400)
 
-room2.mac1 = room.createObject("mac1", "파란맥-우.png") // 맥 생성
+room2.mac1 = room2.createObject("mac1", "파란맥-우.png") // 맥 생성
 room2.mac1.setWidth(150)
 room2.locateObject(room2.mac1, 355, 230)
 
@@ -123,9 +123,9 @@ room.table = room.createObject("table", "테이블-우.png") // 테이블 생성
 room.table.setWidth(350)
 room.locateObject(room.table, 950, 400)
 
-room2.mac = room.createObject("mac", "파란맥-우.png") // 맥 생성
-room2.mac.setWidth(150)
-room2.locateObject(room.mac, 955, 230)
+room2.mac3 = room.createObject("mac3", "파란맥-우.png") // 맥 생성
+room2.mac3.setWidth(150)
+room2.locateObject(room2.mac3, 955, 230)
 
 //
 
