@@ -3,7 +3,7 @@ Room escape by Coala Software
 
 
 제목 : 께미새남편의 방탈출 대작전!!! 
-
+파일명 : Mygame_real
 
 총 3개의 방, 3개의 키패드, 3개의 숫자 키
 2개의 동영상, 몇 개의 오브젝트가 들어있고
