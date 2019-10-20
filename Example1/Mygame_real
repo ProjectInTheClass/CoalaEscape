@@ -2,6 +2,9 @@ room = game.createRoom("room", "배경-1.png") // 방 생성
 room2 = game.createRoom("room2","배경-6.png") // 방 생성
 room3 = game.createRoom("room3", "거실1.png") // 세번째 방 생성
 
+
+playSound("브롤스타즈 BGM - 메인화면.wav")
+
 room.door = room.createObject("door", "문-오른쪽-닫힘.png") // 문 생성
 room.door.setWidth(136) // 크기 조절
 room.locateObject(room.door, 1049, 300) // 문 배치
@@ -75,7 +78,7 @@ room.cabinet.onDrag = function(direction){ // 드래그 모션 direction - Up, D
 //
 //
 
-playSound("브롤스타즈 BGM - 전투 3.mp3")
+playSound("브롤스타즈 BGM - 전투 3.wav")
 
 room2.door = room2.createObject("door","문-오른쪽-열림.png") //문 생성
 room2.door.setWidth(136)
@@ -171,7 +174,7 @@ room2.locateObject(room2.post,150,30) // 위치 변경
 // room3 만들기 
 //
 //
-playSound("브롤스타즈 BGM - 승리.mp3")
+playSound("브롤스타즈 BGM - 승리.wav")
 printMessage("아! 내가 오랜만에 주말에 게임 오지게 많이 했다!ㅎㅎ 어 근데 딱봐도 이상해보이는 저건 뭐지")
 
 room3.box = room3.createObject("box","상자4-2-닫힘.png")
