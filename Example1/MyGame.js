@@ -105,6 +105,11 @@ room2.door2.onClick = function() { // door2를 클릭했을 때
 		printMessage("문이 잠겨있다") // 메시지 출력
 	}
 }
+
+room2.door2.onOpen = function() { // door 상태가 open으로 변경되면 실행
+	room2.door2.setSprite("문-오른쪽-열림.png") // 열린 문으로 변경
+}
+
 //mac1세트 만들기
 room2.table1 = room2.createObject("table1", "테이블-우.png") // 테이블 생성
 room2.table1.setWidth(350)
