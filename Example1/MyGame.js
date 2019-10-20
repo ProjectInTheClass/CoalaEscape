@@ -1,19 +1,23 @@
-room1 = game.createRoom("room1", "배경-6.png") // 방 생성
+room = game.createRoom("room", "배경-6.png") // 방 생성
 room2 = game.createRoom("room2", "배경-5.png") // 두번째 방 생성
 room3 = game.createRoom("room3", "거실1.png") // 세번째 방 생성
                        
 //room1 
 playSound("브롤스타즈 BGM - 메인화면.mp3")
 
-room1.door1 = room1.createObject("door1","문-오른쪽-닫힘.png") // 문 생성
-room1.door1.setWidth(136) // 크기 조절
-room1.locateObject(room1.door1,1049,300) // 문 배치 
-room1.door1.lock() // door 상태를 locked로 변경
+room.door = room.createObject("door", "문-오른쪽-닫힘.png") // 문 생성
+room.door.setWidth(136) // 크기 조절
+room.locateObject(room.door, 1049, 300) // 문 배치
+room.door.lock() // door 상태를 locked로 변경
 
-room1.door1.onClick = function(){
-  if(room1.door1.isClosed()){ room1.door1.open()}
-  else if (room1.door1.isOpened()){ game.move(room2)}
-  else if (room1.door1.isLocked()){ printMessage("앙 오늘 브롤 경쟁전 마지막 날이란 말양ㅠㅠㅠ")}
+room.door.onClick = function() { // door를 클릭했을 때
+	if(room.door.isClosed()){ // door가 closed 상태이면
+		room.door.open() // door의 상태를 open으로 바꿈
+	} else if (room.door.isOpened()){ // door가 opened 상태이면
+		game.move(room2) // room2로 이동
+	} else if (room.door.isLocked()){ // door가 locked 상태이면
+		printMessage("앙 오늘 브롤 경쟁전 마지막 날이란 말양ㅠㅠㅠ") // 메시지 출력
+	}
 }
 
 //키패드 만들기 
@@ -26,42 +30,49 @@ room1.keypad.onClick = function(){ printMessage("오빠~ 허튼 생각하지말�
                                     printMessage("엇! 문이 열려버렸닼ㅋㅋㅋ엌ㅋㅋ 바로 겜하러..ㅎㅎ")
                                   })
                                  }
+
+room.door.onOpen = function() { // door 상태가 open으로 변경되면 실행
+	room.door.setSprite("문-오른쪽-열림.png") // 열린 문으로 변경
+}
+
+
+
 //시계 만들기 
-room1.clock1 = room1.createObject("clock1","시계.png")
-room1.clock1.setWidth(100)
-room1.locateObject(room1.clock1,100,110)
-room1.clock1.onClick=function(){printMessage("마눌님 전번 뒷자리는...!")}
+room.clock = room.createObject("clock","시계.png")
+room.clock.setWidth(100)
+room.locateObject(room.clock,100,110)
+room.clock.onClick=function(){printMessage("마눌님 전번 뒷자리는...!")}
 
 //TV 만들기 
-room1.tv1=room1.createObject("TV","TV2-1.png") //오브젝트 생성 
-room1.tv1.setWidth(100) // 크기 조절 
-room1.locateObject(room1.tv1,500,240) // 위치 설정 
-room1.tv1.onClick=function(){showImageViewer("메인화면레온.png","...")} //이미지 생성
+room.tv=room.createObject("TV","TV2-1.png") //오브젝트 생성 
+room.tv.setWidth(100) // 크기 조절 
+room.locateObject(room.tv,500,240) // 위치 설정 
+room.tv.onClick=function(){showImageViewer("메인화면레온.png","...")} //이미지 생성
 
 // 
-room1.cabinet = room1.createObject("cabinet","캐비닛-왼쪽-닫힘.png")
-room1.cabinet.setWidth(200)
-room1.locateObject(room1.cabinet, 110, 300)
-room1.cabinet.move = true // 플래그 변수
-room1.cabinet.onDrag = function(direction){ // 드래그 모션 direction - Up, Down, Left, Right
-	if(direction == "Right" && room1.cabinet.move){ // 오른쪽으로 드래그 했으면
+room.cabinet = room.createObject("cabinet","캐비닛-왼쪽-닫힘.png")
+room.cabinet.setWidth(200)
+room.locateObject(room1.cabinet, 110, 300)
+room.cabinet.move = true // 플래그 변수
+room.cabinet.onDrag = function(direction){ // 드래그 모션 direction - Up, Down, Left, Right
+	if(direction == "Right" && room.cabinet.move){ // 오른쪽으로 드래그 했으면
 		printMessage("내 브롤점수와 같다 -> 점수 맞추려고 패작 개많이했다-.-")
-		room1.cabinet.moveX(150) // 
-		room1.cabinet.moveY(-30) //
-		room1.cabinet.move = false // 이후에는 더 이상 움직이지 않도록 합니다.
+		room.cabinet.moveX(150) // 
+		room.cabinet.moveY(-30) //
+		room.cabinet.move = false // 이후에는 더 이상 움직이지 않도록 합니다.
 	} else {
 		printMessage("열리지 않는다.")
 	}
 }
 
-room1.chair = room1.createObject("chair", "의자-1.png")
-room1.chair.setWidth(160)
-room1.locateObject(room1.chair, 900, 500)
+room.chair = room.createObject("chair", "의자-1.png")
+room.chair.setWidth(160)
+room.locateObject(room.chair, 900, 500)
 
-room1.book = room1.createObject("book", "책1-2.png")
-room1.book.setWidth(100)
-room1.locateObject(room1.book, 900, 485)
-room1.book.onClick = function() {
+room.book = room.createObject("book", "책1-2.png")
+room.book.setWidth(100)
+room.locateObject(room.book, 900, 485)
+room.book.onClick = function() {
 	showImageViewer("종이.png", "책.txt"); // 이미지 출력
 }
 
